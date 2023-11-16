@@ -161,7 +161,7 @@ func main() {
 				<html><head>
 				<script type="text/javascript">
 					var websocket = null;
-					var wsuri = "ws://127.0.0.1` + addr[strings.LastIndex(addr, ":"):] + `";
+					var wsuri = "ws://wsl.localhost` + addr[strings.LastIndex(addr, ":"):] + `";
 					window.onload = function () {
 						console.log("onload");
 						websocket = new WebSocket(wsuri);

@@ -15,9 +15,9 @@ if !exists(s:preview_ft_filename)
 endif
 
 if !exists('g:preview_browser')
-	let g:preview_browser = 'chromium'
+	let g:preview_browser = 'MicrosoftEdge.exe'
 elseif(g:preview_browser == "")
-	let g:preview_browser = 'chromium'
+	let g:preview_browser = 'MicrosoftEdge.exe'
 endif
 
 let g:preview_websocket_program = g:preview_root.'/'.'websocket'
@@ -103,7 +103,7 @@ endwhile
 echo "HTTP Server startup has finished"
 echo "please wait for browser opening"
 
-let s:preview_websocket_html = g:preview_tmp.'/'.getpid().'.'.bufnr('%').'.'.'websocket.html'
+let s:preview_websocket_html = 'file://wsl.localhost/Ubuntu'.getcwd().g:preview_tmp.'/'.getpid().'.'.bufnr('%').'.'.'websocket.html'
 if g:preview_browser == "chromium" || g:preview_browser == "firefox"
 	let b:preview_browserid = <SID>jobstart([g:preview_browser, "--new-window", s:preview_websocket_html])
 else
